@@ -29,6 +29,7 @@ jobs:
         with:
           node-version: '20'
           cache: npm
+          cache-dependency-path: class-match-react/package-lock.json
 
       - name: Install dependencies
         run: cd class-match-react && npm install
