@@ -11,7 +11,7 @@ import './index.css'; // Import the global CSS
 
 function App() {
   return (
-    <Router>
+    <Router basename="/classMatchSystem">
       <div className="App">
         <Header />
         <Routes>
