@@ -11,11 +11,11 @@ function Header() {
         </a>
         <nav>
           <ul>
-            <li><a href="/">ホーム</a></li>
-            <li><a href="/results">競技別結果</a></li>
-            <li><a href="/schedule">日程</a></li>
-            <li><a href="/ranking">ランキング</a></li>
-            <li><a href="/login">ログイン</a></li>
+            <li><a href="/classMatchSystem/">ホーム</a></li>
+            <li><a href="/classMatchSystem/results">競技別結果</a></li>
+            <li><a href="/classMatchSystem/schedule">日程</a></li>
+            <li><a href="/classMatchSystem/ranking">ランキング</a></li>
+            <li><a href="/classMatchSystem/login">ログイン</a></li>
           </ul>
         </nav>
       </div>
