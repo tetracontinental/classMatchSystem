@@ -37,14 +37,11 @@ jobs:
       - name: Build
         run: cd class-match-react && npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: class-match-react/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         id: deployment
-        with:
-          folder: class-match-react/dist
