@@ -37,6 +37,9 @@ jobs:
       - name: Build
         run: cd class-match-react && npm run build
 
+      - name: Copy index.html to 404.html
+        run: cd class-match-react/dist && cp index.html 404.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -161,4 +161,4 @@ ehthumbs.db
 *.sublime-project
 
 # Vite build output
-dist/
+# dist/
