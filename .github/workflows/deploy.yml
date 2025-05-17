@@ -38,12 +38,12 @@ jobs:
         run: cd class-match-react && npm run build
 
       - name: Copy index.html to 404.html
-        run: cd class-match-react/dist && cp index.html 404.html
+        run: cd dist && cp index.html 404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: class-match-react/dist
+          path: dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
