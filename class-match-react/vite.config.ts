@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/classMatchSystem/',
   plugins: [react()],
   define: {
-    'process.env': process.env,
+    'process.env.VITE_SUPABASE_URL': JSON.stringify(process.env.VITE_SUPABASE_URL),
+    'process.env.VITE_SUPABASE_ANON_KEY': JSON.stringify(process.env.VITE_SUPABASE_ANON_KEY),
   },
 })
