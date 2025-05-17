@@ -1,7 +1,12 @@
 import React from 'react';
 import '../index.css'; // Import the global CSS
+import { supabase } from '../supabaseClient';
 
 function LoginPage() {
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signInWithOAuth({ provider: 'google' });
+  };
+
   return (
     <main>
       <div className="container">
@@ -19,6 +24,7 @@ function LoginPage() {
               </div>
               <button type="submit" className="btn">ログイン</button>
             </form>
+            <button onClick={handleGoogleLogin} style={{marginTop: '2rem', padding: '1rem', fontSize: '1.2rem'}}>Googleでログイン</button>
           </div>
         </section>
       </div>
