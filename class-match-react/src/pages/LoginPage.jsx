@@ -1,14 +1,18 @@
 import React from 'react';
-import '../index.css'; // Import the global CSS
 import { supabase } from '../supabaseClient';
+import '../index.css';
 
 function LoginPage() {
-  const handleGoogleLogin = async () => {
+  const handleGoogleSignIn = async () => {
     try {
-      await supabase.auth.signInWithOAuth({ provider: 'google' });
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google'
+      });
+      if (error) {
+        console.error("Google sign-in error:", error);
+      }
     } catch (error) {
-      console.error('Google sign-in failed:', error);
-      alert('Google sign-in failed. Please try again later.');
+      console.error("Unexpected error during Google sign-in:", error);
     }
   };
 
@@ -18,18 +22,9 @@ function LoginPage() {
         <section className="section">
           <h2 className="section-title">ログイン</h2>
           <div className="login-form">
-            <form>
-              <div className="form-group">
-                <label htmlFor="username">ユーザー名:</label>
-                <input type="text" id="username" name="username" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">パスワード:</label>
-                <input type="password" id="password" name="password" />
-              </div>
-              <button type="submit" className="btn">ログイン</button>
-            </form>
-            <button onClick={handleGoogleLogin} style={{marginTop: '2rem', padding: '1rem', fontSize: '1.2rem'}}>Googleでログイン</button>
+            <button className="btn" onClick={handleGoogleSignIn}>
+              Sign in with Google
+            </button>
           </div>
         </section>
       </div>
