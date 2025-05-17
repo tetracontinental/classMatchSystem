@@ -9,3 +9,4 @@ export default defineConfig(({ command }) => ({
   },
   plugins: [react()],
 }));
+
