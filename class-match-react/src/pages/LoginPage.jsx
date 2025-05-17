@@ -4,7 +4,12 @@ import { supabase } from '../supabaseClient';
 
 function LoginPage() {
   const handleGoogleLogin = async () => {
-    await supabase.auth.signInWithOAuth({ provider: 'google' });
+    try {
+      await supabase.auth.signInWithOAuth({ provider: 'google' });
+    } catch (error) {
+      console.error('Google sign-in failed:', error);
+      alert('Google sign-in failed. Please try again later.');
+    }
   };
 
   return (
